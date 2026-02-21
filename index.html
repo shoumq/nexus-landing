@@ -10,15 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0c10;
-      --bg-2: #12141a;
-      --fg: #f4f6fb;
-      --muted: #aeb4c2;
-      --accent: #ff7a1a;
-      --accent-2: #2dd4bf;
+      --bg: #10131a;
+      --bg-2: #171b24;
+      --fg: #f6f8fc;
+      --muted: #c1c7d6;
+      --accent: #2f80ff;
+      --accent-2: #7c3aed;
+      --accent-3: #2de2e6;
       --line: rgba(255,255,255,0.1);
-      --glass: rgba(255,255,255,0.04);
-      --glow: rgba(255,122,26,0.25);
+      --glass: rgba(255,255,255,0.06);
+      --glow: rgba(47,128,255,0.28);
     }
 
     * { box-sizing: border-box; }
@@ -31,9 +32,9 @@
       margin: 0;
       font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
       background:
-        radial-gradient(1200px 700px at 12% 8%, #1b1b2a 0%, transparent 60%),
-        radial-gradient(1200px 700px at 90% 18%, #152b2b 0%, transparent 60%),
-        radial-gradient(900px 900px at 50% 80%, #1a1520 0%, transparent 55%),
+        radial-gradient(1200px 700px at 12% 8%, #16203a 0%, transparent 60%),
+        radial-gradient(1200px 700px at 90% 18%, #1a1630 0%, transparent 60%),
+        radial-gradient(900px 900px at 50% 80%, #101622 0%, transparent 55%),
         var(--bg);
       color: var(--fg);
       line-height: 1.4;
@@ -127,7 +128,7 @@
     }
 
     .btn.primary {
-      background: linear-gradient(135deg, var(--accent), #ffb347);
+      background: linear-gradient(135deg, var(--accent), #6f9bff);
       color: #1a1a1a;
       border: none;
       box-shadow: 0 12px 30px var(--glow);
@@ -142,7 +143,7 @@
     .hero-card {
       background:
         linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
-        radial-gradient(500px 200px at 20% 0%, rgba(255,122,26,0.12), transparent 60%),
+        radial-gradient(500px 200px at 20% 0%, rgba(47,128,255,0.18), transparent 60%),
         var(--bg-2);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 16px;
@@ -161,8 +162,8 @@
       content: "";
       position: absolute;
       inset: -20px;
-      background: radial-gradient(400px 200px at 20% 0%, rgba(255,122,26,0.35), transparent 70%),
-                  radial-gradient(400px 200px at 80% 20%, rgba(45,212,191,0.25), transparent 70%);
+      background: radial-gradient(400px 200px at 20% 0%, rgba(47,128,255,0.35), transparent 70%),
+                  radial-gradient(400px 200px at 80% 20%, rgba(124,58,237,0.25), transparent 70%);
       filter: blur(24px);
       z-index: -1;
       transform: translateZ(-40px);
@@ -181,7 +182,7 @@
       display: block;
       height: 100%;
       width: 68%;
-      background: linear-gradient(90deg, var(--accent-2), #22d3ee);
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
     }
 
     .grid {
@@ -225,6 +226,13 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
 
+    .glass {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
     .card h3 {
       margin: 6px 0 8px;
     }
@@ -247,6 +255,73 @@
       margin-top: 16px;
     }
 
+    .persona-rows {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .persona-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 14px;
+      background: linear-gradient(120deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .persona-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .feature-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .feature-tile {
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: radial-gradient(300px 120px at 20% 10%, rgba(47,128,255,0.16), transparent 60%),
+                  rgba(255,255,255,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-viz {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      align-items: end;
+      height: 96px;
+    }
+
+    .feature-viz span {
+      display: block;
+      border-radius: 6px;
+      background: linear-gradient(180deg, rgba(91,140,255,0.95), rgba(124,58,237,0.85));
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    .feature-rail {
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-rail .card {
+      border-left: 3px solid var(--accent);
+    }
+
     .report-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -264,6 +339,61 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-top: 16px;
+    }
+
+    .roadmap-line {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .roadmap-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .roadmap-item > :first-child {
+      display: flex;
+      justify-content: center;
+    }
+
+    .roadmap-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(47,128,255,0.25), rgba(124,58,237,0.25));
+      color: var(--fg);
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.1);
+      width: 100%;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .testimonial-hero {
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(140deg, rgba(47,128,255,0.18), rgba(124,58,237,0.12));
+    }
+
+    .testimonial-list {
+      display: grid;
+      gap: 12px;
     }
 
     .section h2 {
@@ -307,7 +437,8 @@
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      .grid, .steps, .chart-grid, .persona-grid, .report-grid, .roadmap { grid-template-columns: 1fr; }
+      .grid, .steps, .chart-grid, .persona-grid, .report-grid, .roadmap, .feature-stack, .testimonial-grid { grid-template-columns: 1fr; }
+      .persona-row, .roadmap-item { grid-template-columns: 1fr; }
       .hero-card { padding: 16px; }
     }
 
@@ -375,7 +506,7 @@
         </div>
       </div>
 
-      <div class="hero-card hero-tilt fade-in" style="animation-delay:0.15s">
+      <div class="hero-card hero-tilt glass fade-in" style="animation-delay:0.15s">
         <div style="font-weight:600; margin-bottom:6px;">Сводка недели</div>
         <div style="color:var(--muted); font-size:14px;">7 дней, 21 точка</div>
         <div class="meter"><span></span></div>
@@ -438,21 +569,27 @@
 
     <section class="section">
       <h2>Кому подходит</h2>
-      <div class="persona-grid">
-        <div class="card">
-          <div style="color:var(--muted); font-size:12px;">Фаундеры и лиды</div>
-          <h3>Надо держать фокус</h3>
-          <p>Понимаешь, когда планировать тяжелые задачи и где выгорание подкрадывается раньше срока.</p>
+      <div class="persona-rows">
+        <div class="persona-row">
+          <div class="persona-tag">Фаундеры</div>
+          <div>
+            <h3>Распределение фокуса и выгорания</h3>
+            <p>Понимаешь, где в графике есть “золотые окна” для решений и где перегрев начинается раньше дедлайна.</p>
+          </div>
         </div>
-        <div class="card">
-          <div style="color:var(--muted); font-size:12px;">Креативные роли</div>
-          <h3>Нужен устойчивый ритм</h3>
-          <p>Видно, какие дни дают максимум идеи и когда лучше переключаться на рутину.</p>
+        <div class="persona-row">
+          <div class="persona-tag">Креатив</div>
+          <div>
+            <h3>Ритм творчества без истощения</h3>
+            <p>Видно, когда идеи рождаются легче, а когда стоит переключаться на рутину.</p>
+          </div>
         </div>
-        <div class="card">
-          <div style="color:var(--muted); font-size:12px;">Продукт/инженеры</div>
-          <h3>Слишком много задач</h3>
-          <p>Оптимизируешь время фокуса и снижешь хаос, опираясь на данные, а не ощущения.</p>
+        <div class="persona-row">
+          <div class="persona-tag">Продукт</div>
+          <div>
+            <h3>Управление нагрузкой</h3>
+            <p>Снижаешь хаос, планируя сложные задачи в пики энергии, а не “на глаз”.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -466,25 +603,25 @@
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#5b8cff"/>
-                <stop offset="50%" stop-color="#2dd4bf"/>
-                <stop offset="100%" stop-color="#ff7a1a"/>
+                <stop offset="50%" stop-color="#2de2e6"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
               </linearGradient>
             </defs>
             <polyline class="line" fill="none" stroke="url(#g1)" stroke-width="3"
               points="0,100 30,90 60,70 90,60 120,50 150,65 180,80 210,60 240,55 270,70 300,95 320,105"/>
             <circle class="pulse" cx="120" cy="50" r="4" fill="#5b8cff"/>
-            <circle class="pulse" cx="240" cy="55" r="4" fill="#ff7a1a"/>
+            <circle class="pulse" cx="240" cy="55" r="4" fill="#2de2e6"/>
           </svg>
         </div>
         <div class="card">
           <div style="color:var(--muted); font-size:12px;">Риск выгорания</div>
           <svg class="chart" viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect class="bar" x="10" y="90" width="40" height="40" fill="#5b8cff" rx="6"/>
-            <rect class="bar" x="60" y="70" width="40" height="60" fill="#4cc9f0" rx="6"/>
-            <rect class="bar" x="110" y="55" width="40" height="75" fill="#2dd4bf" rx="6"/>
-            <rect class="bar" x="160" y="65" width="40" height="65" fill="#ff7a1a" rx="6"/>
-            <rect class="bar" x="210" y="80" width="40" height="50" fill="#ffb347" rx="6"/>
-            <rect class="bar" x="260" y="95" width="40" height="35" fill="#a855f7" rx="6"/>
+            <rect class="bar" x="60" y="70" width="40" height="60" fill="#2de2e6" rx="6"/>
+            <rect class="bar" x="110" y="55" width="40" height="75" fill="#7c3aed" rx="6"/>
+            <rect class="bar" x="160" y="65" width="40" height="65" fill="#5b8cff" rx="6"/>
+            <rect class="bar" x="210" y="80" width="40" height="50" fill="#2f80ff" rx="6"/>
+            <rect class="bar" x="260" y="95" width="40" height="35" fill="#4f46e5" rx="6"/>
             <line x1="10" y1="120" x2="310" y2="120" stroke="rgba(255,255,255,0.08)"/>
           </svg>
         </div>
@@ -493,8 +630,8 @@
           <svg class="chart" viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#a855f7"/>
-                <stop offset="100%" stop-color="#ff7a1a"/>
+                <stop offset="0%" stop-color="#2de2e6"/>
+                <stop offset="100%" stop-color="#2f80ff"/>
               </linearGradient>
             </defs>
             <circle cx="60" cy="70" r="48" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
@@ -516,8 +653,8 @@
             <defs>
               <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#5b8cff"/>
-                <stop offset="50%" stop-color="#a855f7"/>
-                <stop offset="100%" stop-color="#ff7a1a"/>
+                <stop offset="50%" stop-color="#2de2e6"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
               </linearGradient>
             </defs>
             <path class="line" d="M0,160 C80,140 140,60 220,80 C280,95 330,140 400,120 C440,110 470,90 500,85"
@@ -550,7 +687,7 @@
             </div>
             <div class="card">
               <div style="color:var(--muted); font-size:12px;">Настроение</div>
-              <div class="meter"><span style="width:58%; background:linear-gradient(90deg,#ff7a1a,#ffb347)"></span></div>
+              <div class="meter"><span style="width:58%; background:linear-gradient(90deg,#2de2e6,#2f80ff)"></span></div>
             </div>
             <div class="card">
               <div style="color:var(--muted); font-size:12px;">Продуктивность</div>
@@ -558,7 +695,7 @@
             </div>
             <div class="card">
               <div style="color:var(--muted); font-size:12px;">Активность</div>
-              <div class="meter"><span style="width:49%; background:linear-gradient(90deg,#22d3ee,#2dd4bf)"></span></div>
+              <div class="meter"><span style="width:49%; background:linear-gradient(90deg,#2de2e6,#7c3aed)"></span></div>
             </div>
           </div>
         </div>
@@ -567,57 +704,83 @@
 
     <section class="section">
       <h2>Почему это отличается</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Не мотивация, а факты</h3>
-          <p>Мы не советуем “отдохни”. Мы показываем, где у тебя реально падает энергия.</p>
+      <div class="feature-stack">
+        <div class="feature-tile glass">
+          <div style="color:var(--muted); font-size:12px;">Методология</div>
+          <h3>Факты вместо “мотивации”</h3>
+          <p>Модель считает энергию по часам, дни недели и риск выгорания из реальных сигналов: сон, настроение, активность, продуктивность.</p>
+          <div style="margin-top:10px; color:var(--muted); font-size:12px;">Без абстрактных советов — только твои паттерны.</div>
+          <div class="feature-viz" aria-hidden="true">
+            <span style="height:26px;"></span>
+            <span style="height:48px;"></span>
+            <span style="height:72px;"></span>
+            <span style="height:58px;"></span>
+            <span style="height:86px;"></span>
+            <span style="height:40px;"></span>
+            <span style="height:64px;"></span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Привязка к времени</h3>
-          <p>Рекомендации строятся по часам, дням и сезонам твоей нагрузки.</p>
-        </div>
-        <div class="card">
-          <h3>Раннее предупреждение</h3>
-          <p>Модель выгорания на основе реальных сигналов, а не ощущений.</p>
+        <div class="feature-rail">
+          <div class="card">
+            <h3>Привязка ко времени</h3>
+            <p>Рекомендации строятся по дням и часам — ты видишь “где и когда”.</p>
+          </div>
+          <div class="card">
+            <h3>Раннее предупреждение</h3>
+            <p>Тренды выгорания видны раньше, чем это чувствуется.</p>
+          </div>
+          <div class="card">
+            <h3>Минимальный ввод</h3>
+            <p>2–3 минуты в день дают полноценную картину.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <h2>Что дальше (Roadmap)</h2>
-      <div class="roadmap">
-        <div class="card">
-          <div style="color:var(--muted); font-size:12px;">Q1</div>
-          <h3>Персональные отчеты</h3>
-          <p>Глубже по периодам: день/неделя/месяц. Рекомендации по режиму.</p>
+      <div class="roadmap-line">
+        <div class="roadmap-item">
+          <div class="roadmap-pill">Q1</div>
+          <div>
+            <h3>Персональные отчеты</h3>
+            <p>Глубже по периодам: день/неделя/месяц. Рекомендации по режиму и фокусу.</p>
+          </div>
         </div>
-        <div class="card">
-          <div style="color:var(--muted); font-size:12px;">Q2</div>
-          <h3>Автосбор данных</h3>
-          <p>Интеграции с календарем, трекерами сна и таск‑менеджерами.</p>
+        <div class="roadmap-item">
+          <div class="roadmap-pill">Q2</div>
+          <div>
+            <h3>Автосбор данных</h3>
+            <p>Интеграции с календарем, трекерами сна и таск‑менеджерами.</p>
+          </div>
         </div>
-        <div class="card">
-          <div style="color:var(--muted); font-size:12px;">Q3</div>
-          <h3>Командная аналитика</h3>
-          <p>Агрегации по команде, без доступа к личным данным.</p>
+        <div class="roadmap-item">
+          <div class="roadmap-pill">Q3</div>
+          <div>
+            <h3>Командная аналитика</h3>
+            <p>Агрегации по команде без раскрытия личных данных.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <h2>Отзывы</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="quote">“Я понял, что мой пик — до обеда. Перенес встречи, и эффективность выросла.”</div>
-          <div style="color:var(--muted); font-size:12px; margin-top:8px;">Андрей, Product Lead</div>
+      <div class="testimonial-grid">
+        <div class="testimonial-hero glass">
+          <div class="quote" style="font-size:18px;">“Я понял, что мой пик — до обеда. Перенес встречи, и эффективность выросла.”</div>
+          <div style="color:var(--muted); font-size:12px; margin-top:10px;">Андрей, Product Lead</div>
+          <div style="margin-top:12px; color:var(--muted); font-size:12px;">Сводка: +2 часа фокуса в день</div>
         </div>
-        <div class="card">
-          <div class="quote">“Риск выгорания показал тренд раньше, чем я сам это почувствовал.”</div>
-          <div style="color:var(--muted); font-size:12px; margin-top:8px;">Мария, дизайнер</div>
-        </div>
-        <div class="card">
-          <div class="quote">“Вижу, какие дни сильнее всего проседают. Это помогло перестроить график.”</div>
-          <div style="color:var(--muted); font-size:12px; margin-top:8px;">Игорь, инженер</div>
+        <div class="testimonial-list">
+          <div class="card">
+            <div class="quote">“Риск выгорания показал тренд раньше, чем я сам это почувствовал.”</div>
+            <div style="color:var(--muted); font-size:12px; margin-top:8px;">Мария, дизайнер</div>
+          </div>
+          <div class="card">
+            <div class="quote">“Вижу, какие дни сильнее всего проседают. Это помогло перестроить график.”</div>
+            <div style="color:var(--muted); font-size:12px; margin-top:8px;">Игорь, инженер</div>
+          </div>
         </div>
       </div>
     </section>
@@ -633,7 +796,7 @@
         <button class="btn primary" type="submit">Встать в лист ожидания</button>
       </form>
       </div>
-      <div class="hero-card">
+      <div class="hero-card glass">
         <div style="font-weight:600; margin-bottom:6px;">Что ты получишь</div>
         <div class="grid" style="grid-template-columns:1fr; gap:10px;">
           <div class="card">
