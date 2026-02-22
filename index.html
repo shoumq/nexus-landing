@@ -60,6 +60,8 @@
       opacity: 0.35;
     }
 
+
+
     header {
       display: flex;
       align-items: center;
@@ -94,6 +96,7 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 40px;
       padding: 24px 0 40px;
+      position: relative;
     }
 
     .hero h1 {
@@ -473,6 +476,9 @@
       100% { background-position: 0% 0%; }
     }
 
+
+
+
     @keyframes drawLine {
       to { stroke-dashoffset: 0; }
     }
@@ -520,7 +526,7 @@
             <h3>10:00–12:00</h3>
           </div>
           <div class="card">
-            <div style="color:var(--muted); font-size:12px;">Сон</div>
+            <div style="color:var(--mutпоed); font-size:12px;">Сон</div>
             <h3>6.8 ч</h3>
           </div>
         </div>
@@ -530,14 +536,14 @@
               <span>Энергия по часам</span><span>Сегодня</span>
             </div>
             <div style="display:grid; grid-template-columns:repeat(8,1fr); gap:6px; margin-top:10px;">
-              <div style="height:36px; background:#1a1d24; border-radius:6px;"></div>
-              <div style="height:42px; background:#1e232c; border-radius:6px;"></div>
-              <div style="height:54px; background:#223042; border-radius:6px;"></div>
-              <div style="height:64px; background:#1f3b3d; border-radius:6px;"></div>
-              <div style="height:58px; background:#1e2f2f; border-radius:6px;"></div>
-              <div style="height:46px; background:#232630; border-radius:6px;"></div>
-              <div style="height:38px; background:#1a1d24; border-radius:6px;"></div>
-              <div style="height:30px; background:#15181d; border-radius:6px;"></div>
+              <div style="height:36px; background:linear-gradient(180deg,#2de2e6,#2f80ff); border-radius:6px;"></div>
+              <div style="height:42px; background:linear-gradient(180deg,#2de2e6,#7c3aed); border-radius:6px;"></div>
+              <div style="height:54px; background:linear-gradient(180deg,#2de2e6,#2f80ff); border-radius:6px;"></div>
+              <div style="height:64px; background:linear-gradient(180deg,#2de2e6,#7c3aed); border-radius:6px;"></div>
+              <div style="height:58px; background:linear-gradient(180deg,#2de2e6,#2f80ff); border-radius:6px;"></div>
+              <div style="height:46px; background:linear-gradient(180deg,#2de2e6,#7c3aed); border-radius:6px;"></div>
+              <div style="height:38px; background:linear-gradient(180deg,#2de2e6,#2f80ff); border-radius:6px;"></div>
+              <div style="height:30px; background:linear-gradient(180deg,#2de2e6,#7c3aed); border-radius:6px;"></div>
             </div>
           </div>
           <div class="card">
